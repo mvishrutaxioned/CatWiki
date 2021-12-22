@@ -83,7 +83,7 @@ sub { bottom: -.25em; }
 /*for all*/
 body {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a { 
@@ -106,21 +106,29 @@ li {
 /*for wrapper*/
 .wrapper {
   max-width: 1350px;
-  width: 86%; 
+  width: 86.9%; 
   margin: 0 auto;
 }
 /*=================================
   Header styling starts here
 =================================*/
 
+.logo a {
+  padding: 22px 0;
+  display: flex;
+  align-items: flex-end;
+  font-family: 'Mystery Quest', cursive;
+  font-size: 23px;
+}
 
-
-
-
+.logo a figure {
+  width: 42px;
+  margin-left: 10px;
+}
 
 /*=================================
   Header styling ends here
-=================================*/  
+=================================*/
 
 /*=================================
   main styling starts here
