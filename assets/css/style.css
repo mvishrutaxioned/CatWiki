@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Mystery+Quest&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Mystery+Quest&display=swap');
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
@@ -103,15 +103,22 @@ li {
 .bold { font-weight: bold; }
 .transition { transition: 1s all ease; }
 
+.container { 
+  width: 86.9%;
+  margin: 0 auto;
+}
+
 /*for wrapper*/
 .wrapper {
   max-width: 1350px;
-  width: 86.9%; 
+  width: 83%; 
   margin: 0 auto;
 }
 /*=================================
   Header styling starts here
 =================================*/
+
+header .wrapper { width: 100%; }
 
 .logo a {
   padding: 22px 0;
@@ -135,10 +142,10 @@ li {
   main styling starts here
 =================================*/
 
-.banner { margin-top: 5px; }
-
-.banner .wrapper {
+/* banner styling starts here */
+.banner {
   height: 506px;
+  margin-top: 5px;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   box-sizing: border-box;
@@ -148,11 +155,7 @@ li {
   background-size: cover;
 }
 
-.banner-content {
-  width: 82.5%;
-  margin: 0 auto;
-  color: #fff;
-}
+.banner-content { color: #fff; }
 
 .banner-content h2 {
   display: flex;
@@ -210,14 +213,124 @@ li {
   text-indent: -9999px;
 }
 
+.banner-content form button::after,
+.breeds div > a::after {
+  font-weight: 600;
+  font-family: 'Font Awesome 5 Free';
+}
+
 .banner-content form button::after {
   content: '\f002';
   color: #000;
-  font-weight: 600;
-  font-family: 'Font Awesome 5 Free';
   font-size: 17px;
   text-indent: 0;
 }
+/* banner styling ends here */
+
+/* summary styling starts here */
+.breeds {
+  background: #e3e1dc;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.breeds .wrapper { padding: 38px 0; }
+
+.breeds p {
+  position: relative;
+  color: #444343;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.breeds p::after {
+  content: '';
+  width: 50px;
+  border: 1.5px solid #333;
+  background: #333;
+  position: absolute;
+  top: 28px;
+  left: 0;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.breeds .wrapper div {
+  margin: 46px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.breeds h2 {
+  width: 50%;
+  font-weight: 700;
+  font-size: 44px;
+}
+
+.breeds div > a {
+  padding: 10px;
+  color: #666;
+  font-size: 16px;
+  font-weight: 600;
+  transition: .5s ease;
+}
+
+.breeds div > a::after {
+  content: '\f30b';
+  margin-left: 10px;
+  color: #666;
+  font-size: 16px;
+  transition: .5s ease;
+}
+
+.breeds div > a:hover,
+.breeds div > a:hover::after {
+  color: #333;
+}
+
+.breeds ul {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+}
+
+.breeds ul li { position: relative; }
+
+.breeds ul figure {
+  width: 210px;
+  height: 210px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.breeds ul li:first-child figure::before {
+  content: '';
+  width: 6%;
+  height: 65%;
+  margin: 30px auto 20px auto;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  background: #dec68b;
+}
+
+.breeds ul img {
+  width: auto;
+  height: 100%;
+  z-index: 10;
+}
+
+.breeds ul a {
+  margin-top: 15px;
+  color: #000;
+  font-weight: 600;
+}
+/* summary styling ends here */
 
 /*=================================
   main styling ends here
