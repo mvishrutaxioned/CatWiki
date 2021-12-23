@@ -453,6 +453,45 @@ footer span::before,
 }
 /* question styling ends here */
 
+/* toggleBtn styling starts here */
+.toggleUp {
+  display: none;
+  width: 100%;
+  height: 0;
+  position: relative;
+  text-indent: -9999px;
+}
+
+.toggleUp::after {
+  content: '\f106';
+  padding: 6px 12px;
+  border-radius: 50%;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #000;
+  color: #fff;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  font-size: 22px;
+  opacity: .3;
+  cursor: pointer;
+  text-indent: 0;
+  -webkit-transition: .5s ease;
+  -o-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.toggleUp:hover::after { opacity: .8; }
+.hidden { overflow: hidden; }
+
+.flex { 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
+  display: flex 
+}
+/* toggleBtn styling ends here */
+
 /*=================================
   main styling ends here
 =================================*/
