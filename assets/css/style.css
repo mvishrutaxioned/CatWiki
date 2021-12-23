@@ -103,23 +103,16 @@ li {
 .bold { font-weight: bold; }
 .transition { transition: 1s all ease; }
 
-.container { 
-  width: 86.9%;
-  margin: 0 auto;
-}
-
 /*for wrapper*/
 .wrapper {
   max-width: 1350px;
-  width: 83%; 
+  width: 86.9%;
+  box-sizing: border-box;
   margin: 0 auto;
 }
 /*=================================
   Header styling starts here
 =================================*/
-
-footer .wrapper,
-header .wrapper { width: 100%; }
 
 .logo a {
   padding: 22px 0;
@@ -144,8 +137,9 @@ header .wrapper { width: 100%; }
 =================================*/
 
 /* banner styling starts here */
-.banner {
+.banner .wrapper {
   height: 506px;
+  padding: 0 7.5%;
   margin-top: 5px;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
@@ -166,29 +160,70 @@ header .wrapper { width: 100%; }
 }
 
 .banner-content h2 figure {
-  width: 9%;
+  width: 12%;
   margin: 0 0 20px 18px;
 }
 
 .banner-content p {
-  width: 38%;
+  width: 50%;
   margin-bottom: 30px;
   font-size: 22px;
   letter-spacing: .5px;
 }
-.modal { display: none; }
 
 .banner form { 
-  width: 38%;
+  width: 51%;
+  height: auto;
   margin: 50px 0 30px 0;
+  position: relative;
+}
+
+.banner-content form > div:first-child {
+  width: 100%;
   border-radius: 50px;
+  background: #fff;
   overflow: hidden;
 }
 
-.banner-content form div {
+.modal {
   width: 100%;
+  height: 260%;
+  padding: 20px 0;
+  border-radius: 25px;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  left: 0;
   background: #fff;
+  overflow-y: hidden;
+  z-index: 10;
 }
+
+.modal ul {
+  height: 100%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  overflow-y: scroll;
+}
+
+.modal ul::-webkit-scrollbar { width: 4px; }
+.modal ul::-webkit-scrollbar-track { background: #f1f1f1; }
+.modal ul::-webkit-scrollbar-thumb { background: #888; }
+.modal ul::-webkit-scrollbar-thumb:hover { background: #555; }
+.modal li { margin: 0 30px 0 0; }
+
+.modal li a {
+  width: 100%;
+  padding: 15px 10px;
+  border-radius: 10px;
+  color: #333;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.modal li a:hover { background: #e3e1dc; }
 
 .banner-content form input {
   width: 80%;
@@ -199,6 +234,8 @@ header .wrapper { width: 100%; }
   font-size: 16px;
   outline: none;
 }
+
+.no { display: none; }
 
 .banner-content form input::placeholder {
   color: #333;
@@ -231,13 +268,12 @@ footer span::before,
 /* banner styling ends here */
 
 /* summary styling starts here */
-.breeds {
+.breeds .wrapper {
+  padding: 38px 7.5%;
   background: #e3e1dc;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
-
-.breeds .wrapper { padding: 38px 0; }
 
 .breeds p {
   position: relative;
@@ -343,7 +379,7 @@ footer span::before,
 
 /* question styling starts here */
 .about-cats {
-  padding: 50px 0;
+  padding: 50px 9%;
   margin: 50px auto;
 }
 
@@ -427,9 +463,9 @@ footer span::before,
 
 footer .wrapper {
   box-sizing: border-box;
-  padding: 9px 30px 13px 50px;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
+  padding: 8px 30px 12px 50px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
