@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Mystery+Quest&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Mystery+Quest&display=swap');
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
@@ -106,7 +106,8 @@ li {
 /*for wrapper*/
 .wrapper {
   max-width: 1350px;
-  width: 86.9%; 
+  width: 86.9%;
+  box-sizing: border-box;
   margin: 0 auto;
 }
 /*=================================
@@ -134,6 +135,119 @@ li {
 /*=================================
   main styling starts here
 =================================*/
+
+/* catInfo styling starts here */
+.cat-info { margin: 15px auto; }
+
+.cat-info .wrapper {
+  padding: 0 4%;
+  display: flex;
+  justify-content: space-between;
+  gap: 55px
+}
+
+.img { width: 40%; }
+
+.cat-info .wrapper figure {
+  width: 85%;
+  position: relative;
+}
+
+.cat-info .wrapper figure img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.cat-info .wrapper figure::before {
+  content: '';
+  width: 3%;
+  height: 80%;
+  margin: auto 0;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  background: #dec68b;
+}
+
+.info { width: 60%; }
+
+.gallery h2,
+.info h2 {
+  font-weight: 600;
+  font-size: 34px;
+}
+
+.info > p {
+  width: 94%;
+  margin: 25px 0;
+  color: #333;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.info > ul {
+  width: 83%;
+  margin-top: 35px;
+}
+
+.info > ul > li {
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.info > ul > li > p {
+  margin-left: 6px;
+  font-weight: 500;
+}
+
+.info > ul > li h3 { font-weight: 900; }
+
+.levels {
+  padding: 0;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.levels li {
+  height: 11px;
+  padding: 0 28px;
+  margin-right: 10px;
+  border-radius: 10px;
+  text-indent: -9999px;
+}
+
+.fill { background-color: #544439; }
+.empty { background-color: #d3cfcc; }
+/* catInfo styling ends here */
+
+/* catGallery styling starts here */
+.gallery {
+  padding: 20px 0 40px 0;
+  margin: 20px auto 40px auto;
+}
+
+.gallery ul {
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3%;
+}
+
+.gallery ul li {
+  width: 22%;
+  margin-bottom: 4%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+/* catGallery styling ends here */
 
 /* toggleBtn styling starts here */
 .toggleUp {
@@ -184,7 +298,7 @@ li {
 
 footer .wrapper {
   box-sizing: border-box;
-  padding: 8px 30px 12px 50px;
+  padding: 10px 30px 10px 0;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   display: flex;

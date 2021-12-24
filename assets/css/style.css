@@ -338,7 +338,7 @@ footer span::before,
   margin-bottom: 50px;
   display: flex;
   justify-content: space-between;
-  gap: 5%;
+  gap: 4%;
 }
 
 .breeds ul li { position: relative; }
@@ -502,7 +502,7 @@ footer span::before,
 
 footer .wrapper {
   box-sizing: border-box;
-  padding: 8px 30px 12px 50px;
+  padding: 8px 30px 12px 4%;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   display: flex;
