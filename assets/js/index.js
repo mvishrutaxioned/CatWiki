@@ -102,6 +102,27 @@ $(document).ready(() => {
         $('.error').hide()
     }
 
+    // window resize functioanality
+    $(window).resize(() => {
+        if (window.matchMedia('(max-width: 540px)').matches) {
+            $('#breed').attr('placeholder', 'Search')
+    
+            $('#breed').on('focus', e => $('.modal').addClass('respo'));
+            $('.error').hide()
+        } else if (window.matchMedia('(min-width: 540px)').matches) {
+            $('.modal').removeClass('respo');
+            $('input').attr('placeholder', 'Enter your breed')
+            $('.error').hide()
+        }
+    })
+
+    // close responsive modal
+    $('.close').click(e => {
+        $('.modal').removeClass('respo')
+        $('#breed').val('');
+        $('.modal-list').hide();
+    })
+
     // checkName on input blur
     $('#breed').blur(e => $(this).focusout(checkName()))
     
