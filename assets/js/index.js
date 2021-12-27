@@ -37,4 +37,101 @@ $(document).ready(() => {
             })
         }
     }
+
+    // async fetchModal data
+    async function fetchModalData(value) {
+        var url = `https://api.thecatapi.com/v1/breeds/search?q=${value}`
+        var data = await fetch(url).then(res => res.json()).catch(e => e)
+        displayModal(data);
+    }
+
+    // display modal data
+    function displayModal(data) {
+        $('.modal-list ul').html(' ');
+        var content = '';
+
+        if(data.length) {
+            if($('#breed').val() != '') {
+                $(data).each(function(i, e) {
+                    content += `
+                        <li><a href="cat.html" title="${e.name}" data-id="${e.id}">${e.name}</a></li>
+                    `;
+                })
+
+                $('.modal-list').removeClass('no')
+                $('.modal-list').show();
+            } else { $('.modal-list').addClass('no') }
+
+            $('.modal-list ul').html(content);
+            $('.modal-list ul li a').each(function(index, elem) {
+                $(this).click(p => {
+                    localStorage.setItem('catName', $(this).text())
+                    localStorage.setItem('catId', $(this).attr('data-id'))
+                })
+            })
+
+        } else if(!data.length) {
+            $('.modal-list').addClass('no')
+        }
+    }
+
+    // form validation functionality
+    function checkName() {
+        var breed = $('#breed').val();
+
+        if(breed == '') {
+            $('.modal-list').addClass('no');
+            displayError('Above field is required')
+            $('.modal-list').hide();
+        } else if(regexName.test(breed)) displayError('Please enter valid name')
+        else {
+            displaySuccess()
+            return 1
+        }
+    }
+
+    // display error function
+    function displayError(msg) {
+        $('.error').text(msg)
+        $('.error').show()
+    }
+
+    // display success function
+    function displaySuccess() {
+        $('.error').html('')
+        $('.error').hide()
+    }
+
+    // checkName on input blur
+    $('#breed').blur(e => $(this).focusout(checkName()))
+    
+    // fetchData on input change
+    $("#breed").on("input", function() {
+        var checkNum = checkName()
+        if(checkNum == 1) {
+            fetchModalData($(this).val())
+        }
+    });
+
+    // fetchData on submit form
+    $('#cats').submit(async function(e) {
+        e.preventDefault()
+        
+        var checkNum = checkName();
+        if(checkNum == 1) {
+            displaySuccess()
+            var text = $('#breed').val();
+            var url = `https://api.thecatapi.com/v1/breeds/search?q=${text}`;
+            var data = await fetch(url).then(res => res.json()).catch(e => e);
+
+            if(data.length) {
+                localStorage.setItem('catName', data[0].name)
+                localStorage.setItem('catId', data[0].id)
+
+                window.location = '/cat.html'
+            } else if (!data.length) {
+                displayError('Sorry! No such results.')
+            }
+        }
+    })
 })
