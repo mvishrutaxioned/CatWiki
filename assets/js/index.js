@@ -2,6 +2,7 @@ $(document).ready(() => {
 
     var regexName = /[^a-zA-z]/g;
     var topHeight = $('header').height();
+    var num;
 
     // call fetchSummary function
     fetchSummary()
@@ -104,12 +105,11 @@ $(document).ready(() => {
         $('.error').hide()
     }
 
-    // hide and show toggle btn functioanality
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > topHeight) {
-            $('.toggleUp').addClass('flex');
-        } else {
-            $('.toggleUp').removeClass('flex');
+    // hide and show toggle btn functionality
+    $(document).on('click',function(e){
+        if(!(($(e.target).closest("#cats").length > 0 ) || ($(e.target).closest("#cats").length > 0))){
+            $(".modal").removeClass('respo');
+            $('html, body').css("overflow", "visible")
         }
     });
 
@@ -124,7 +124,10 @@ $(document).ready(() => {
         if (window.matchMedia('(max-width: 540px)').matches) {
             $('#breed').attr('placeholder', 'Search')
     
-            $('#breed').on('focus', e => $('.modal').addClass('respo'));
+            $('#cats').on('click', e => {
+                $('.modal').addClass('respo')
+                $('html, body').css("overflow", "hidden")
+            });
             $('.error').hide()
         } else if (window.matchMedia('(min-width: 540px)').matches) {
             $('.modal').removeClass('respo');
