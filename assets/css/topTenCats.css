@@ -1,5 +1,6 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Mystery+Quest&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Mystery+Quest&display=swap');
+
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
@@ -135,6 +136,54 @@ li {
   main styling starts here
 =================================*/
 
+/* topTenCats styling starts here */
+.searchedCats {
+  padding-bottom: 25px;
+  margin: 17px auto 25px auto;
+}
+
+.searchedCats h2 {
+  font-weight: 900;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+.searchedCats ul { margin: 50px auto; }
+
+.searchedCats ul li {
+  margin-bottom: 50px;
+  display: flex;
+  gap: 40px;
+}
+
+.searchedCats ul li figure {
+  width: 160px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.searchedCats ul li figure img {
+  width: auto;
+  height: 100%;
+}
+
+.cat-content { width: 68%; }
+
+.cat-content h3 {
+  font-weight: 600;
+  font-size: 34px;
+}
+
+.cat-content p {
+  margin-top: 22px;
+  font-weight: 500;
+  line-height: 20px;
+}
+/* topTenCats styling ends here */
+
 /* toggleBtn styling starts here */
 .toggleUp {
   display: none;
@@ -208,8 +257,8 @@ footer .wrapper > span a {
 }
 
 footer .wrapper > span { letter-spacing: .5px; }
-
 footer .wrapper > span a:hover { color: #666; }
+
 footer .wrapper > span small {
   margin-right: 10px;
   font-size: 20px;
@@ -220,9 +269,43 @@ footer .wrapper > span small {
 =================================*/ 
 
 /*media query starts*/
-/*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {
+/*media query for 768px starts here*/
+@media only screen and (max-width: 768px) {
+  footer .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
 
+  footer .logo {
+    padding: 0;
+    margin: 0;
+  }
 
+  footer h1,
+  footer span {
+    padding: 0 0 0 30px;
+    margin: 0;
+  }
+}
 
-}  
+/*media query for 540px starts here*/
+@media only screen and (max-width: 540px) {
+
+  h2 { text-align: center; }
+
+  .searchedCats ul li {
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .cat-content { width: 90%; }
+  .cat-content p { margin-top: 10px; }
+  
+  .searchedCats ul li figure {
+    width: auto;
+    overflow: hidden;
+  }
+}

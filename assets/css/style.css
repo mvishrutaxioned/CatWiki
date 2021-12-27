@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Mystery+Quest&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Mystery+Quest&display=swap');
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
@@ -137,20 +137,24 @@ li {
 =================================*/
 
 /* banner styling starts here */
+.banner { width: 100%; }
+
 .banner .wrapper {
-  height: 506px;
-  padding: 0 7.5%;
+  padding: 52px 4%;
   margin-top: 5px;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  background: url('https://via.placeholder.com/1300x700');
+  background: url('https://via.placeholder.com/1300x700') right;
   background-size: cover;
 }
 
-.banner-content { color: #fff; }
+.banner-content {
+  margin: 52px 4.5%;
+  color: #fff;
+}
 
 .banner-content h2 {
   display: flex;
@@ -171,50 +175,49 @@ li {
   letter-spacing: .5px;
 }
 
-.banner form { 
+.close { display: none; }
+
+.modal {
   width: 51%;
-  height: auto;
-  margin: 50px 0 30px 0;
   position: relative;
 }
 
-.banner-content form > div:first-child {
+.banner form { 
   width: 100%;
-  border-radius: 50px;
-  background: #fff;
-  overflow: hidden;
+  height: auto;
+  margin: 50px 0 30px 0;
 }
 
-.modal {
+.modal-list {
   width: 100%;
   height: 260%;
   padding: 20px 0;
   border-radius: 25px;
   position: absolute;
-  top: 80px;
+  top: 120%;
   right: 0;
   left: 0;
-  background: #fff;
+  background-color: #fff;
   overflow-y: hidden;
   z-index: 10;
 }
 
-.modal ul {
+.modal-list ul {
   height: 100%;
-  margin: 10px;
+  margin: 0 15px;
   display: flex;
   flex-direction: column;
-  border: 1px solid;
   overflow-y: scroll;
+  border: 1px solid;
 }
 
-.modal ul::-webkit-scrollbar { width: 4px; }
-.modal ul::-webkit-scrollbar-track { background: #f1f1f1; }
-.modal ul::-webkit-scrollbar-thumb { background: #888; }
-.modal ul::-webkit-scrollbar-thumb:hover { background: #555; }
-.modal li { margin: 0 30px 0 0; }
+.modal-list ul::-webkit-scrollbar { width: 4px; }
+.modal-list ul::-webkit-scrollbar-track { background: #f1f1f1; }
+.modal-list ul::-webkit-scrollbar-thumb { background: #888; }
+.modal-list ul::-webkit-scrollbar-thumb:hover { background: #555; }
+.modal-list li { margin: 0 30px 0 0; }
 
-.modal li a {
+.modal-list li a {
   width: 100%;
   padding: 15px 10px;
   border-radius: 10px;
@@ -223,7 +226,24 @@ li {
   font-size: 16px;
 }
 
-.modal li a:hover { background: #e3e1dc; }
+.modal-list li a:hover { background: #e3e1dc; }
+
+.error {
+  position: absolute;
+  top: 115%;
+  left: 25px;
+  color: #ff1d1d;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.banner-content form > div:first-child {
+  width: 100%;
+  border-radius: 50px;
+  display: flex;
+  background: #fff;
+  overflow: hidden;
+}
 
 .banner-content form input {
   width: 80%;
@@ -244,7 +264,10 @@ li {
 }
 
 .banner-content form button {
+  margin-right: 10px;
   border: none;
+  display: flex;
+  align-items: center;
   background: none;
   position: relative;
   outline: none;
@@ -264,21 +287,31 @@ footer span::before,
   color: #000;
   font-size: 17px;
   text-indent: 0;
+  transition: .5s ease;
+}
+
+.banner-content form button:hover::after {
+  color: #666;
 }
 /* banner styling ends here */
 
 /* summary styling starts here */
 .breeds .wrapper {
-  padding: 38px 7.5%;
+  padding: 38px 4%;
   background: #e3e1dc;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
 
+.breeds p,
+.breeds ul {
+  margin: 0 4.5%;
+}
+
 .breeds p {
   position: relative;
   color: #444343;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 17px;
 }
 
@@ -296,7 +329,7 @@ footer span::before,
 }
 
 .breeds .wrapper div {
-  margin: 46px 0;
+  margin: 46px 3.7%;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -305,7 +338,7 @@ footer span::before,
 .breeds h2,
 .about-cats div > h2 {
   width: 50%;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 44px;
 }
 
@@ -335,18 +368,23 @@ footer span::before,
 }
 
 .breeds ul {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 4%;
 }
 
-.breeds ul li { position: relative; }
+.breeds ul li {
+  margin-bottom: 30px;
+  position: relative;
+}
 
 .breeds ul figure {
   width: 210px;
   height: 210px;
   border-radius: 25px;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
 }
 
@@ -354,7 +392,7 @@ footer span::before,
   content: '';
   width: 6%;
   height: 65%;
-  margin: 30px auto 20px auto;
+  margin-top: 15%;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   position: absolute;
@@ -367,7 +405,7 @@ footer span::before,
 .breeds ul img {
   width: auto;
   height: 100%;
-  z-index: 10;
+  z-index: 0;
 }
 
 .breeds ul a {
@@ -379,11 +417,13 @@ footer span::before,
 
 /* question styling starts here */
 .about-cats {
-  padding: 50px 9%;
+  padding: 50px 0;
   margin: 50px auto;
 }
 
 .about-cats .wrapper {
+  padding: 0 4%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   gap: 5%;
@@ -391,6 +431,7 @@ footer span::before,
 
 .about-cats .wrapper div {
   width: 45%;
+  padding-left: 4.5%;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -421,6 +462,7 @@ footer span::before,
 
 .about-cats ul {
   width: 55%;
+  padding-right: 4.5%;
   display: grid;
   grid-template-columns: repeat(21, 1fr);
   grid-auto-rows: 10px;
@@ -502,7 +544,7 @@ footer span::before,
 
 footer .wrapper {
   box-sizing: border-box;
-  padding: 8px 30px 12px 4%;
+  padding: 8px 4% 12px 4%;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   display: flex;
@@ -511,7 +553,8 @@ footer .wrapper {
   background: #000;
 }
 
-footer .logo { margin-left: 50px; }
+footer h1 { margin-left: 4.5%; }
+footer span { margin-right: 4.5%; }
 
 footer .logo a,
 footer span,
@@ -526,20 +569,239 @@ footer .wrapper > span a {
 }
 
 footer .wrapper > span { letter-spacing: .5px; }
-
 footer .wrapper > span a:hover { color: #666; }
-footer .wrapper > span small {
-  margin-right: 10px;
-  font-size: 20px;
-}
+footer .wrapper > span small { font-size: 20px; }
  /*=================================
   footer styling ends here
 =================================*/ 
 
 /*media query starts*/
+/*media query for 1300px starts here*/
+@media only screen and (max-width: 1300px) {
+  .breeds ul { flex-wrap: wrap; }
+}
+
+/*media query for 1024px starts here*/
+@media only screen and (max-width: 1024px) {
+  .wrapper { width: 90%; }
+
+  .banner .wrapper,
+  .breeds .wrapper,
+  .about-cats .wrapper,
+  footer .wrapper {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .breeds ul { flex-wrap: wrap; }
+  .breeds h2 { width: 70%; }
+  .breeds ul li  { margin-bottom: 30px; }
+}
+
 /*media query for 995px starts here*/
 @media only screen and (max-width: 995px) {
+  .banner .wrapper { padding: 30px 2%; }
+}
 
+/*media query for 768px starts here*/
+@media only screen and (max-width: 768px) {
+  .breeds ul figure { width: 180px; }
+  .about-cats .wrapper {
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #fff;
+  }
 
+  .banner-content { margin: 0 4%; }
+  .about-cats ul { margin-top: 30px; }
 
-}  
+  .about-cats .wrapper > div,
+  .about-cats ul {
+    width: 100%;
+  }
+
+  footer .wrapper {
+    padding: 10px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .logo { padding: 0; }
+
+  footer h1,
+  footer span {
+    padding: 0 20px;
+    margin: 0;
+  }
+}
+
+/*media query for 540px starts here*/
+@media only screen and (max-width: 540px) {
+  .banner .wrapper {
+    padding: 0 2%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+  }
+
+  .banner-content h2 { font-size: 28px; }
+  .banner-content p { font-size: 18px; }
+  .banner-content button::after { margin-right: 10px; }
+  .banner-content { margin: 20px 4%; }
+  .breeds .wrapper > div { margin: 40px 4%; }
+  .breeds ul { justify-content: center; }
+  .breeds ul figure { min-width: 10px; }
+
+  .breeds > div h2 {
+    width: 100%;
+    font-size: 32px;
+  }
+
+  .banner-content p { width: 65%; }
+  .modal { width: 50%; }
+  .banner-content form { margin: 0; }
+
+  .banner-content form div input { padding: 15px 20px; }
+  .breeds ul { justify-content: center; }
+  .breeds div > a { display: none; }
+  .breeds ul li { text-align: center; }
+
+  .about-cats .wrapper div,
+  .about-cats ul { 
+    width: 100%;
+    padding: 0;
+    margin: auto 0;
+  }
+
+  .about-cats ul {
+    width: 90%;
+    padding-right: 0;
+    margin: 30px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-columns: 10px;
+    grid-gap: 10px;
+  }
+
+  .about-cats ul li:first-child {
+    grid-column: 1/8;
+    grid-row: 1/7;
+  }
+  
+  .about-cats ul li:nth-child(2) {
+    grid-column: 8/14;
+    grid-row: 1/13;
+  }
+  
+  .about-cats ul li:last-child {
+    grid-column: 3/8;
+    grid-row: 7/17;
+  }
+
+  .modal.respo {
+    width: 80%;
+    min-height: 20%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    margin: auto;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 15%;
+    right: 0;
+    left: 0;
+    background: #fff;
+    z-index: 20;
+  }
+
+  .respo .close {
+    padding: 2px 10px;
+    border-radius: 5px;
+    display: initial;
+    align-self: flex-end;
+    background-color: #f1f1f1;
+    color: #000;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 20;
+  }
+
+  .banner .respo form { 
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+    margin: 15px 0 0 0;
+    z-index: 20;
+  }
+
+  .respo .modal-list {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    position: static;
+    z-index: 20;
+  }
+
+  .respo .modal-list ul {
+    max-height: 300px;
+    z-index: 20;
+  }
+
+  .error {
+    display: none;
+    top: 105%;
+    left: 20px;
+    font-size: 8px;
+  }
+
+  .respo .error {
+    width: 100%;
+    margin-top: 5px;
+    position: absolute;
+    top: 80%;
+    left: 9%;
+    font-size: 12px;
+    z-index: 10;
+  }
+
+  .respo form > div:first-child {
+    border: 1px solid #000;
+    z-index: 10;
+  }
+}
+
+/*media query for 414px starts here*/
+@media only screen and (max-width: 414px) {
+  .breeds ul figure {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .breeds ul li:first-child figure::before {
+    margin-top: 13%;
+    right: 89%;
+  }
+
+  .banner-content p { width: 80%; }
+
+  .modal.respo {
+    width: 90%;
+    top: 20%;
+    padding: 10px 6px 40px 6px;
+  }
+
+  .respo .error {
+    top: 65%;
+    left: 7%;
+  }
+
+  .respo .modal-list ul {
+    max-height: 200px;
+    z-index: 20;
+  }
+}
