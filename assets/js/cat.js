@@ -4,6 +4,15 @@ $(document).ready(() => {
     var catId = localStorage.getItem('catId');
     var topHeight = $('header').height();
 
+    // display sorry box
+    if(catName && catId) {
+        $('.sorry').hide()
+        fetchData()
+        displayGallery()
+    } else if (catName == null || catId == null) {
+        $('.sorry').show()
+    }
+
     // async fetchData function
     async function fetchData() {
         var url1 = `https://api.thecatapi.com/v1/breeds/search?q=${catName}`
@@ -11,6 +20,27 @@ $(document).ready(() => {
         var catInfo = await fetch(url1).then(res => res.json()).catch(e => e)
         var catImg = await fetch(url2).then(res => res.json()).catch(e => e)
         displayCat(catInfo, catImg);
+    }
+
+    // createLevel function
+    function createLevels(n) {
+        var info = '';
+        if(n > 0) {
+            var rest = 5-n;
+            for(var i=1; i<=n; i++) {
+                info += '<li class="fill">fill</li>'
+            }
+            if(5-n != 0) {
+                for(var j=1; j<=5-n; j++) {
+                    info += '<li class="empty">empty</li>'
+                }
+            }
+        } else {
+            for(var k=1; k<=5; k++) {
+                info += `<li class="empty">empty</li>`;
+            }
+        }
+        return info;
     }
 
     // async display cat info function
@@ -87,5 +117,25 @@ $(document).ready(() => {
                 </section>`
             );
         }
+    }
+
+    // async display catGallery function
+    async function displayGallery() {
+        var content = '';
+        for(var i=0; i<8; i++) {
+            var url1 = `https://api.thecatapi.com/v1/images/search?breed_id=${catId}`
+            var catImage = await fetch(url1).then(res => res.json()).catch(e => e)
+            content += `<li><img src="${catImage[0].url}" alt="Cat Image ${i}"></li>`;
+        }
+        $('main > a').after(`
+            <section class="gallery">
+                <div class="wrapper">
+                    <h2>Other photos</h2>
+                    <ul>
+                    ${content}
+                    </ul>
+                </div>
+            </section>
+        `)
     }
 })
