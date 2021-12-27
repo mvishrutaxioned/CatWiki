@@ -1,5 +1,7 @@
 $(document).ready(() => {
+
     var regexName = /[^a-zA-z]/g;
+    var topHeight = $('header').height();
 
     // call fetchSummary function
     fetchSummary()
@@ -101,6 +103,21 @@ $(document).ready(() => {
         $('.error').html('')
         $('.error').hide()
     }
+
+    // hide and show toggle btn functioanality
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > topHeight) {
+            $('.toggleUp').addClass('flex');
+        } else {
+            $('.toggleUp').removeClass('flex');
+        }
+    });
+
+    // on toggleBtn click functionality
+    $('.toggleUp').click(e => {
+        e.preventDefault();
+        window.scroll({top: 0, behavior: "smooth"});
+    })
 
     // window resize functioanality
     $(window).resize(() => {
