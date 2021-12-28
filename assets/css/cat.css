@@ -468,6 +468,7 @@ footer .wrapper > span small {
 
   .cat-info .wrapper figure {
     width: 50%;
+    height: auto;
     margin: 0 auto 30px auto;
   }
 
