@@ -24,7 +24,7 @@ $(document).ready(() => {
                         <figure>
                         <img src="${e.image.url}" alt="${e.name}">
                         </figure>
-                        <a href="cat.html" title="${e.name}" data-id="${e.id}">${e.name}</a>
+                        <a href="./cat.html" title="${e.name}" data-id="${e.id}">${e.name}</a>
                     </li>
                 `;
             })
@@ -56,7 +56,7 @@ $(document).ready(() => {
             if($('#breed').val() != '') {
                 $(data).each(function(i, e) {
                     content += `
-                        <li><a href="cat.html" title="${e.name}" data-id="${e.id}">${e.name}</a></li>
+                        <li><a href="./cat.html" title="${e.name}" data-id="${e.id}">${e.name}</a></li>
                     `;
                 })
 
@@ -196,7 +196,7 @@ $(document).ready(() => {
                 localStorage.setItem('catName', data[0].name)
                 localStorage.setItem('catId', data[0].id)
 
-                window.location = '/cat.html'
+                window.location = './cat.html'
             } else if (!data.length) {
                 displayError('Sorry! No such results.')
             }
