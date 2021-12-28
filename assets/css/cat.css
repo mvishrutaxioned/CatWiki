@@ -468,7 +468,6 @@ footer .wrapper > span small {
 
   .cat-info .wrapper figure {
     width: 50%;
-    height: auto;
     margin: 0 auto 30px auto;
   }
 
@@ -576,6 +575,7 @@ footer .wrapper > span small {
 /*media query for 320px starts here*/
 @media only screen and (max-width: 414px) {
   .gallery ul li { width: 90%; }
+  .cat-info .wrapper figure { height: auto; }
 
   .cat-info .wrapper figure::before {
     width: 5%;
