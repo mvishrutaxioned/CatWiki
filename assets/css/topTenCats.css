@@ -115,17 +115,28 @@ li {
 =================================*/
 
 .logo a {
-  padding: 22px 0;
+  padding: 23px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
   align-items: flex-end;
   color: #000;
+  font-weight: 500;
   font-family: 'Mystery Quest', cursive;
-  font-size: 23px;
+  font-size: 25px;
+  transition: .5s ease;
 }
 
 .logo a figure {
-  width: 42px;
-  margin-left: 10px;
+  width: 48px;
+  margin: 0 0 2px 10px;
+}
+
+.logo a:hover,
+.logo a:hover figure {
+  color: #666;
 }
 
 /*=================================
@@ -152,6 +163,8 @@ li {
 
 .searchedCats ul li {
   margin-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 40px;
 }
@@ -159,23 +172,37 @@ li {
 .searchedCats ul li figure {
   width: 160px;
   height: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 25px;
   overflow: hidden;
 }
 
 .searchedCats ul li figure img {
-  width: auto;
+  width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .cat-content { width: 68%; }
 
-.cat-content h3 {
+.cat-content h3,
+.cat-content h3 a {
+  color: #000;
   font-weight: 600;
   font-size: 34px;
+  -webkit-transition: .5s ease;
+  -o-transition: .5s ease;
+  transition: .5s ease;
 }
+
+.cat-content h3:hover,
+.cat-content h3 a:hover { color: #666; }
 
 .cat-content p {
   margin-top: 22px;
@@ -232,17 +259,25 @@ li {
 =================================*/ 
 
 footer .wrapper {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 10px 30px 10px 0;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   background: #000;
 }
 
 footer .logo { margin-left: 50px; }
+footer .logo { font-weight: 400; }
 
 footer .logo a,
 footer span,
@@ -253,6 +288,8 @@ footer span a {
 footer .wrapper > span a {
   font-weight: 600;
   text-decoration: underline;
+  -webkit-transition: .5s ease;
+  -o-transition: .5s ease;
   transition: .5s ease;
 }
 
@@ -272,7 +309,12 @@ footer .wrapper > span small {
 /*media query for 768px starts here*/
 @media only screen and (max-width: 768px) {
   footer .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
     text-align: left;
   }
@@ -295,7 +337,12 @@ footer .wrapper > span small {
   h2 { text-align: center; }
 
   .searchedCats ul li {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 20px;
     text-align: center;
@@ -308,4 +355,18 @@ footer .wrapper > span small {
     width: auto;
     overflow: hidden;
   }
+
+  /* remove hover effects */
+  .logo a:hover,
+  .logo a:hover figure {
+    color: #000;
+  }
+
+  .cat-content h3:hover,
+  .cat-content h3 a:hover {
+    color: #000;
+  }
+
+  .toggleUp:hover::after { opacity: .3; }
+  footer .wrapper > span a:hover { color: #fff; }
 }

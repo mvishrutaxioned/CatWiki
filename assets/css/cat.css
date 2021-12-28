@@ -115,17 +115,28 @@ li {
 =================================*/
 
 .logo a {
-  padding: 22px 0;
+  padding: 23px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
   align-items: flex-end;
   color: #000;
+  font-weight: 500;
   font-family: 'Mystery Quest', cursive;
-  font-size: 23px;
+  font-size: 25px;
+  transition: .5s ease;
 }
 
 .logo a figure {
-  width: 42px;
-  margin-left: 10px;
+  width: 48px;
+  margin: 0 0 2px 10px;
+}
+
+.logo a:hover,
+.logo a:hover figure {
+  color: #666;
 }
 
 /*=================================
@@ -154,7 +165,11 @@ li {
 
 .cat-info .wrapper {
   padding: 0 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   gap: 55px
 }
@@ -209,7 +224,11 @@ li {
 .info > ul > li {
   width: 100%;
   margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   font-size: 15px;
 }
@@ -224,7 +243,11 @@ li {
 .levels {
   padding: 0;
   margin: 5px 0 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -248,8 +271,13 @@ li {
 
 .gallery ul {
   margin: 40px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 3%;
 }
@@ -260,6 +288,7 @@ li {
   margin-bottom: 4%;
   border-radius: 20px;
   overflow: hidden;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -267,6 +296,7 @@ li {
   width: 100%;
   height: 100%;
   border-radius: 20px;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 /* catGallery styling ends here */
@@ -319,17 +349,25 @@ li {
 =================================*/ 
 
 footer .wrapper {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 10px 30px 10px 0;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   background: #000;
 }
 
 footer .logo { margin-left: 50px; }
+footer .logo a { font-weight: 400; }
 
 footer .logo a,
 footer span,
@@ -340,12 +378,14 @@ footer span a {
 footer .wrapper > span a {
   font-weight: 600;
   text-decoration: underline;
+  -webkit-transition: .5s ease;
+  -o-transition: .5s ease;
   transition: .5s ease;
 }
 
 footer .wrapper > span { letter-spacing: .5px; }
-
 footer .wrapper > span a:hover { color: #666; }
+
 footer .wrapper > span small {
   margin-right: 10px;
   font-size: 20px;
@@ -360,13 +400,14 @@ footer .wrapper > span small {
 @media only screen and (max-width: 1280px) {
   .info > ul { width: 100%; }
   .cat-info .wrapper { gap: 0; }
-
   .img { width: 45%; }
   .info { width: 55%; }
 
   .info > ul > li:nth-child(1),
   .info > ul > li:nth-child(2),
   .info > ul > li:nth-child(3) {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
   }
 }
@@ -383,7 +424,12 @@ footer .wrapper > span small {
 
 /*media query for 995px starts here*/
 @media only screen and (max-width: 995px) {
-  .cat-info .wrapper { flex-direction: column; }
+  .cat-info .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
 
   .info,
   .img {
@@ -395,6 +441,7 @@ footer .wrapper > span small {
 
   .info > p {
     width: 100%;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 40px;
   }
@@ -407,6 +454,8 @@ footer .wrapper > span small {
   .info > ul > li:nth-child(1),
   .info > ul > li:nth-child(2),
   .info > ul > li:nth-child(3) {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
   }
 
@@ -415,7 +464,12 @@ footer .wrapper > span small {
     margin: 0 auto 30px auto;
   }
 
-  .gallery ul { justify-content: flex-start; }
+  .gallery ul {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
   .gallery ul li { width: 30%; }
 }
 
@@ -434,6 +488,8 @@ footer .wrapper > span small {
   .info > ul > li:nth-child(1),
   .info > ul > li:nth-child(2),
   .info > ul > li:nth-child(3) {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
 
@@ -441,7 +497,12 @@ footer .wrapper > span small {
 
   .info > ul > li {
     margin-bottom: 30px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     text-align: center;
   }
@@ -451,7 +512,12 @@ footer .wrapper > span small {
   .info > ul > li p { margin-left: 0; }
   .levels { margin: 0 auto; }
   .gallery { text-align: center; }
-  .gallery ul { justify-content: center; }
+
+  .gallery ul {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
 
   .gallery ul li {
     width: 70%;
@@ -459,12 +525,22 @@ footer .wrapper > span small {
   }
 
   footer .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
   }
   
   footer .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
   }
 
@@ -478,6 +554,15 @@ footer .wrapper > span small {
     padding: 0 0 0 30px;
     margin: 0;
   }
+
+  /* remove hover effects */
+  .logo a:hover,
+  .logo a:hover figure {
+    color: #000;
+  }
+
+  .toggleUp:hover::after { opacity: .3; }
+  footer .wrapper > span a:hover { color: #fff; }
 }
 
 /*media query for 320px starts here*/
