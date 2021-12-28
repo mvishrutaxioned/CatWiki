@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Mystery+Quest&display=swap');
+
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
@@ -150,53 +151,69 @@ li {
   main styling starts here
 =================================*/
 
-/* haveACat styling starts here */
+/* topTenCats styling starts here */
+.searchedCats {
+  padding-bottom: 25px;
+  margin: 17px auto 25px auto;
+}
 
-.haveACat .wrapper {
-  margin-top: 40px;
+.searchedCats h2 {
+  font-weight: 900;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+.searchedCats ul { margin: 50px auto; }
+
+.searchedCats ul li {
+  margin-bottom: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  gap: 40px;
 }
 
-.haveACat figure {
-  width: 50%;
+.searchedCats ul li figure {
+  width: 160px;
+  height: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border-radius: 25px;
   overflow: hidden;
 }
 
-.haveACat .wrapper > h2 {
-  margin: 50px auto;
-  font-weight: 900;
-  font-size: 34px;
+.searchedCats ul li figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
-.haveACat .wrapper > p {
-  width: 60%;
-  font-size: 18px;
-}
+.cat-content { width: 68%; }
 
-.haveACat ul {
-  width: 60%;
-  margin: 30px 0 50px 0;
-}
-
-.haveACat ul li { margin-bottom: 40px; }
-
-.haveACat ul h3 {
-  margin-bottom: 10px;
+.cat-content h3,
+.cat-content h3 a {
+  color: #000;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 34px;
+  -webkit-transition: .5s ease;
+  -o-transition: .5s ease;
+  transition: .5s ease;
 }
 
-/* haveACat styling ends here */
+.cat-content h3:hover,
+.cat-content h3 a:hover { color: #666; }
+
+.cat-content p {
+  margin-top: 22px;
+  font-weight: 500;
+  line-height: 20px;
+}
+/* topTenCats styling ends here */
 
 /* toggleBtn styling starts here */
 .toggleUp {
@@ -293,28 +310,8 @@ footer .wrapper > span small {
 =================================*/ 
 
 /*media query starts*/
-/*media query for 1024px starts here*/
-@media only screen and (max-width: 1024px) {
-
-  .haveACat figure { width: 60%; }
-
-  .haveACat .wrapper > h2,
-  .haveACat .wrapper > p,
-  .haveACat ul {
-    width: 85%;
-  }
-}
-  
 /*media query for 768px starts here*/
 @media only screen and (max-width: 768px) {
-  .haveACat figure { width: 70%; }
-
-  .haveACat .wrapper > h2,
-  .haveACat .wrapper > p,
-  .haveACat ul {
-    width: 90%;
-  }
-
   footer .wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -338,16 +335,42 @@ footer .wrapper > span small {
   }
 }
 
-/*media query for 768px starts here*/
+/*media query for 540px starts here*/
 @media only screen and (max-width: 540px) {
-  .haveACat figure { width: 90%; }
-  .haveACat .wrapper > h2 { text-align: center; }
-  .toggleUp:hover::after { opacity: .3; }
 
+  h2 { text-align: center; }
+
+  .searchedCats ul li {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .cat-content { width: 90%; }
+  .cat-content p { margin-top: 10px; }
+  
+  .searchedCats ul li figure {
+    width: auto;
+    overflow: hidden;
+  }
+
+  /* remove hover effects */
   .logo a:hover,
   .logo a:hover figure {
     color: #000;
   }
 
+  .cat-content h3:hover,
+  .cat-content h3 a:hover {
+    color: #000;
+  }
+
+  .toggleUp:hover::after { opacity: .3; }
   footer .wrapper > span a:hover { color: #fff; }
 }
