@@ -115,7 +115,7 @@ li {
 =================================*/
 
 .logo a {
-  padding: 23px 0;
+  padding: 22px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,20 +123,13 @@ li {
   -ms-flex-align: end;
   align-items: flex-end;
   color: #000;
-  font-weight: 500;
   font-family: 'Mystery Quest', cursive;
-  font-size: 25px;
-  transition: .5s ease;
+  font-size: 23px;
 }
 
 .logo a figure {
-  width: 48px;
-  margin: 0 0 2px 10px;
-}
-
-.logo a:hover,
-.logo a:hover figure {
-  color: #666;
+  width: 42px;
+  margin-left: 10px;
 }
 
 /*=================================
@@ -151,7 +144,7 @@ li {
 .banner { width: 100%; }
 
 .banner .wrapper {
-  padding: 40px 4% 64px 4%;
+  padding: 52px 4%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin-top: 5px;
@@ -168,7 +161,6 @@ li {
 }
 
 .banner-content {
-  padding: 25px 0;
   margin: 52px 4.5%;
   color: #fff;
 }
@@ -181,7 +173,7 @@ li {
   -ms-flex-align: center;
   align-items: center;
   font-family: 'Mystery Quest', cursive;
-  font-size: 68px;
+  font-size: 60px;
 }
 
 .banner-content h2 figure {
@@ -191,37 +183,22 @@ li {
 
 .banner-content p {
   width: 50%;
-  margin-bottom: 35px;
-  font-size: 23px;
-  line-height: 30px;
-  letter-spacing: .8px;
+  margin-bottom: 30px;
+  font-size: 22px;
+  letter-spacing: .5px;
 }
 
 .close { display: none; }
 
-.layer {
-  content: '';
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: #000;
-  opacity: .7;
-  z-index: 10;
-  text-indent: -9999px;
-}
-
 .modal {
-  width: 57%;
+  width: 51%;
   position: relative;
 }
 
 .banner form { 
   width: 100%;
   height: auto;
-  margin: 45px 0 30px 0;
+  margin: 50px 0 30px 0;
 }
 
 .modal-list {
@@ -289,7 +266,7 @@ li {
 
 .banner-content form input {
   width: 80%;
-  padding: 27px 0 27px 26px;
+  padding: 24px 0 24px 26px;
   border: none;
   color: #333;
   font-weight: 600;
@@ -452,9 +429,9 @@ footer span::before,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   gap: 4%;
 }
 
@@ -491,7 +468,7 @@ footer span::before,
 }
 
 .breeds ul img {
-  width: 100%;
+  width: 100;
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
@@ -502,10 +479,7 @@ footer span::before,
   margin-top: 15px;
   color: #000;
   font-weight: 600;
-  transition: .5s ease;
 }
-
-.breeds ul a:hover { color: #666; }
 /* summary styling ends here */
 
 /* question styling starts here */
@@ -685,12 +659,7 @@ footer .logo a,
 footer span,
 footer span a {
   color: #fff;
-  transition: .5s ease;
 }
-
-footer .logo a { font-weight: 400; }
-footer h1 figure { width: 42px; }
-footer .logo a:hover { color: #c2c1bf; }
 
 footer .wrapper > span a {
   font-weight: 600;
@@ -710,13 +679,7 @@ footer .wrapper > span small { font-size: 20px; }
 /*media query starts*/
 /*media query for 1300px starts here*/
 @media only screen and (max-width: 1300px) {
-  .breeds ul {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-  }
+  .breeds ul { -ms-flex-wrap: wrap; flex-wrap: wrap; }
 }
 
 /*media query for 1024px starts here*/
@@ -796,8 +759,6 @@ footer .wrapper > span small { font-size: 20px; }
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
   }
-
-  .banner-content h2 figure { display: none; }
 
   .banner-content h2 { font-size: 28px; }
   .banner-content p { font-size: 18px; }
@@ -965,48 +926,20 @@ footer .wrapper > span small { font-size: 20px; }
     border: 1px solid #000;
     z-index: 10;
   }
-
-  /* remove hover effects */
-  .logo a:hover,
-  .logo a:hover figure {
-    color: #000;
-  }
-
-  .modal-list ul::-webkit-scrollbar-thumb:hover {
-    background: #888;
-    cursor: pointer;
-  }
-
-  .modal-list li a:hover { background: #fff; }
-  .banner-content form button:hover::after { color: #000; }
-
-  .about-cats div > a:hover,
-  .about-cats div > a:hover::after,
-  .breeds div > a:hover,
-  .breeds div > a:hover::after {
-    color: #666;
-  }
-
-  .breeds ul a:hover { color: #000; }
-  .toggleUp:hover::after { opacity: .3; }
-  footer .logo a:hover { color: #fff; }
 }
 
 /*media query for 414px starts here*/
 @media only screen and (max-width: 414px) {
   .breeds ul figure {
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
   }
 
-  .breeds ul li { width: 80%; }
-
   .breeds ul li:first-child figure::before {
     margin-top: 13%;
-    right: 100%;
+    right: 89%;
   }
 
-  .modal { width: 70%; }
   .banner-content p { width: 80%; }
 
   .modal.respo {
