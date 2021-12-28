@@ -62,7 +62,10 @@ $(document).ready(() => {
 
                 $('.modal-list').removeClass('no')
                 $('.modal-list').show();
-            } else { $('.modal-list').addClass('no') }
+            } else {
+                $('.modal-list').hide();
+                $('.modal-list').addClass('no')
+            }
 
             $('.modal-list ul').html(content);
             $('.modal-list ul li a').each(function(index, elem) {
@@ -183,7 +186,7 @@ $(document).ready(() => {
         e.preventDefault()
         
         var checkNum = checkName();
-        if(checkNum == 1) {
+        if($('#breed').val() !== '' && checkNum == 1) {
             displaySuccess()
             var text = $('#breed').val();
             var url = `https://api.thecatapi.com/v1/breeds/search?q=${text}`;
