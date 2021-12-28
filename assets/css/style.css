@@ -115,7 +115,11 @@ li {
 =================================*/
 
 .logo a {
+<<<<<<< HEAD
   padding: 22px 0;
+=======
+  padding: 21px 0;
+>>>>>>> ea3770e43c813285abaf97389b0cd522bb70b346
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,12 +128,26 @@ li {
   align-items: flex-end;
   color: #000;
   font-family: 'Mystery Quest', cursive;
+<<<<<<< HEAD
   font-size: 23px;
+=======
+  font-size: 22px;
+  transition: .5s ease;
+>>>>>>> ea3770e43c813285abaf97389b0cd522bb70b346
 }
 
 .logo a figure {
   width: 42px;
+<<<<<<< HEAD
   margin-left: 10px;
+=======
+  margin: 0 0 2px 10px;
+}
+
+.logo a:hover,
+.logo a:hover figure {
+  color: #666;
+>>>>>>> ea3770e43c813285abaf97389b0cd522bb70b346
 }
 
 /*=================================
@@ -144,7 +162,11 @@ li {
 .banner { width: 100%; }
 
 .banner .wrapper {
+<<<<<<< HEAD
   padding: 52px 4%;
+=======
+  padding: 52px 4% 52px 4%;
+>>>>>>> ea3770e43c813285abaf97389b0cd522bb70b346
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin-top: 5px;
@@ -156,8 +178,8 @@ li {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: url('https://via.placeholder.com/1300x700') right;
-  background-size: cover;
+  background: url('https://via.placeholder.com/1300x700');
+  background-size: 100% 100%;
 }
 
 .banner-content {
@@ -173,7 +195,11 @@ li {
   -ms-flex-align: center;
   align-items: center;
   font-family: 'Mystery Quest', cursive;
+<<<<<<< HEAD
   font-size: 60px;
+=======
+  font-size: 58px;
+>>>>>>> ea3770e43c813285abaf97389b0cd522bb70b346
 }
 
 .banner-content h2 figure {
@@ -183,15 +209,25 @@ li {
 
 .banner-content p {
   width: 50%;
+<<<<<<< HEAD
   margin-bottom: 30px;
   font-size: 22px;
+=======
+  margin-bottom: 35px;
+  font-size: 22px;
+  line-height: 30px;
+>>>>>>> ea3770e43c813285abaf97389b0cd522bb70b346
   letter-spacing: .5px;
 }
 
 .close { display: none; }
 
 .modal {
+<<<<<<< HEAD
   width: 51%;
+=======
+  width: 52%;
+>>>>>>> ea3770e43c813285abaf97389b0cd522bb70b346
   position: relative;
 }
 
@@ -399,8 +435,8 @@ footer span::before,
 .breeds div > a {
   padding: 10px;
   color: #666;
+  font-weight: 900;
   font-size: 16px;
-  font-weight: 600;
   -webkit-transition: .5s ease;
   -o-transition: .5s ease;
   transition: .5s ease;
@@ -534,7 +570,7 @@ footer span::before,
 .about-cats div > a {
   padding: 18px 0 0 0;
   color: #666;
-  font-weight: 600;
+  font-weight: 900;
   font-size: 16px;
 }
 
