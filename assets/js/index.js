@@ -109,6 +109,7 @@ $(document).ready(() => {
         if(!(($(e.target).closest("#cats").length > 0 ) || ($(e.target).closest("#cats").length > 0))){
             $('.layer').hide();
             $(".modal").removeClass('respo');
+            $('#breed').val('');
             $('.modal-list').hide()
             $('html, body').css("overflow", "visible")
         }
@@ -150,6 +151,7 @@ $(document).ready(() => {
             $('.error').hide()
         } else if (window.matchMedia('(min-width: 540px)').matches) {
             $('.modal').removeClass('respo');
+            $('.layer').hide();
             $('input').attr('placeholder', 'Enter your breed')
             $('html, body').css("overflow", "visible")
             $('.error').hide()

@@ -17,8 +17,8 @@ $(document).ready(() => {
     async function fetchData() {
         var url1 = `https://api.thecatapi.com/v1/breeds/search?q=${catName}`
         var url2 = `https://api.thecatapi.com/v1/images/search?breed_id=${catId}`
-        var catInfo = await fetch(url1).then(res => res.json()).catch(e => e)
-        var catImg = await fetch(url2).then(res => res.json()).catch(e => e)
+        var catInfo = await fetch(url1).then(res => res.json()).catch(e => console.log(e))
+        var catImg = await fetch(url2).then(res => res.json()).catch(e => console.log(e))
         displayCat(catInfo, catImg);
     }
 
@@ -48,7 +48,7 @@ $(document).ready(() => {
         $('.cat-info .wrapper').html(' ');
         var content = '';
 
-        if(catInfo.length) {
+        if(catInfo.length && catImg.length) {
             $(catInfo).each(function(i, e) {
                 content += `
                 <div class="img">
@@ -124,10 +124,15 @@ $(document).ready(() => {
         var content = '';
         for(var i=0; i<8; i++) {
             var url1 = `https://api.thecatapi.com/v1/images/search?breed_id=${catId}`
-            var catImage = await fetch(url1).then(res => res.json()).catch(e => e)
-            content += `<li><img src="${catImage[0].url}" alt="Cat Image ${i}"></li>`;
+            var catImage = await fetch(url1).then(res => res.json()).catch(e => console.log(e))
+
+            if(catImage.length) {
+                content += `<li><img src="${catImage[0].url}" alt="Cat Image ${i}"></li>`;
+            }
         }
-        $('main > a').after(`
+
+        if(content.length) {
+            $('main > a').after(`
             <section class="gallery">
                 <div class="wrapper">
                     <h2>Other photos</h2>
@@ -137,6 +142,10 @@ $(document).ready(() => {
                 </div>
             </section>
         `)
+        } else {
+            $('.sorry').html("Oops! Error Occured.")
+            $('.sorry').show()
+        }
     }
 
     // hide and show toggle btn functioanality
