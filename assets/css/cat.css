@@ -114,8 +114,12 @@ li {
   Header styling starts here
 =================================*/
 
+.logo {
+  margin: 21px 0;
+  display: inline-block;
+}
+
 .logo a {
-  padding: 23px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,12 +129,12 @@ li {
   color: #000;
   font-weight: 500;
   font-family: 'Mystery Quest', cursive;
-  font-size: 25px;
+  font-size: 23px;
   transition: .5s ease;
 }
 
 .logo a figure {
-  width: 48px;
+  width: 42px;
   margin: 0 0 2px 10px;
 }
 
@@ -178,12 +182,15 @@ li {
 
 .cat-info .wrapper figure {
   width: 85%;
+  height: 340px;
   position: relative;
 }
 
 .cat-info .wrapper figure img {
   width: 100%;
+  height: 100%;
   border-radius: 20px;
+  object-fit: cover;
 }
 
 .cat-info .wrapper figure::before {
@@ -303,9 +310,9 @@ li {
 
 /* toggleBtn styling starts here */
 .toggleUp {
-  display: none;
   width: 100%;
   height: 0;
+  display: none;
   position: relative;
   text-indent: -9999px;
 }
