@@ -2,7 +2,6 @@ $(document).ready(() => {
 
     var regexName = /[^a-zA-z]/g;
     var topHeight = $('header').height();
-    var num;
 
     // call fetchSummary function
     fetchSummary()
@@ -106,10 +105,21 @@ $(document).ready(() => {
     }
 
     // hide and show toggle btn functionality
-    $(document).on('click',function(e){
+    $('.layer').on('click',function(e){
         if(!(($(e.target).closest("#cats").length > 0 ) || ($(e.target).closest("#cats").length > 0))){
+            $('.layer').hide();
             $(".modal").removeClass('respo');
+            $('.modal-list').hide()
             $('html, body').css("overflow", "visible")
+        }
+    });
+
+    // hide and show toggle btn functioanality
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > topHeight) {
+            $('.toggleUp').addClass('flex');
+        } else {
+            $('.toggleUp').removeClass('flex');
         }
     });
 
@@ -121,10 +131,19 @@ $(document).ready(() => {
 
     // window resize functioanality
     $(window).resize(() => {
+        responsivePage()
+    })
+    $(window).load(() => {
+        responsivePage()
+    })
+
+    // responsivePage function
+    function responsivePage() {
         if (window.matchMedia('(max-width: 540px)').matches) {
             $('#breed').attr('placeholder', 'Search')
     
             $('#cats').on('click', e => {
+                $('.layer').show();
                 $('.modal').addClass('respo')
                 $('html, body').css("overflow", "hidden")
             });
@@ -132,15 +151,18 @@ $(document).ready(() => {
         } else if (window.matchMedia('(min-width: 540px)').matches) {
             $('.modal').removeClass('respo');
             $('input').attr('placeholder', 'Enter your breed')
+            $('html, body').css("overflow", "visible")
             $('.error').hide()
         }
-    })
+    }
 
     // close responsive modal
     $('.close').click(e => {
+        $('.layer').hide();
         $('.modal').removeClass('respo')
         $('#breed').val('');
         $('.modal-list').hide();
+        $('html, body').css("overflow", "visible")
     })
 
     // checkName on input blur
