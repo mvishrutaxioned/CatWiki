@@ -143,7 +143,7 @@ $(document).ready(() => {
             </section>
         `)
         } else {
-            $('.sorry').html("Oops! Error Occured.")
+            $('.sorry').html("Sorry! Data Not Found.")
             $('.sorry').show()
         }
     }
